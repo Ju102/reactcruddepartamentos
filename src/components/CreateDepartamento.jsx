@@ -40,20 +40,46 @@ class CreateDepartamento extends Component {
 
     render() {
         return (
-            <div className='m-3 p-3 rounded-3'>
+            <div className='modern-card'>
                 {
                     this.state.status &&
                     <Navigate to="/" />
                 }
-                <h2>Crear Departamento</h2>
-                <form onSubmit={this.insertDepartamento}>
-                    <label className='form-label'>ID</label>
-                    <input className='form-control' type="text" ref={this.cajaId} />
-                    <label className='form-label'>Nombre</label>
-                    <input className='form-control' type='text' ref={this.cajaNombre} />
-                    <label className='form-label'>Localidad</label>
-                    <input className='form-control' type='text' ref={this.cajaLocalidad} />
-                    <button className='btn btn-success mt-4'>Enviar</button>
+                <h2 className="modern-title">➕ Crear Nuevo Departamento</h2>
+                <form onSubmit={this.insertDepartamento} className="modern-form">
+                    <div className="mb-3">
+                        <label className='form-label'>📋 ID del Departamento</label>
+                        <input 
+                            className='form-control' 
+                            type="text" 
+                            ref={this.cajaId}
+                            placeholder="Ingrese el ID del departamento"
+                            required
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className='form-label'>🏷️ Nombre</label>
+                        <input 
+                            className='form-control' 
+                            type='text' 
+                            ref={this.cajaNombre}
+                            placeholder="Ingrese el nombre del departamento"
+                            required
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className='form-label'>📍 Localidad</label>
+                        <input 
+                            className='form-control' 
+                            type='text' 
+                            ref={this.cajaLocalidad}
+                            placeholder="Ingrese la localidad"
+                            required
+                        />
+                    </div>
+                    <button className='btn btn-modern btn-modern-success mt-3' style={{width: '100%'}}>
+                        ✅ Crear Departamento
+                    </button>
                 </form>
             </div>
         )
